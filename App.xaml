@@ -1,0 +1,24 @@
+﻿<Application x:Class="GrainChainMatrix.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GrainChainMatrix"
+             xmlns:viewModel="clr-namespace:GrainChainMatrix.MVVM.ViewModel"
+             xmlns:view="clr-namespace:GrainChainMatrix.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml" />
+                <ResourceDictionary Source="Theme/ButtonTheme.xaml" />
+                <ResourceDictionary Source="Theme/Messages.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ToastNotifications.Messages;component/Themes/Default.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewModel:CargaViewModel}">
+                <view:CargaView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ResultadoViewModel}">
+                <view:ResultadoView/>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

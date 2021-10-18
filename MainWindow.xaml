@@ -1,0 +1,60 @@
+﻿<Window x:Class="GrainChainMatrix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GrainChainMatrix"
+        xmlns:viewModel="clr-namespace:GrainChainMatrix.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="600" Width="920"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        Icon="/Images/logo-green.png"
+        AllowsTransparency="True">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Border Background="White"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Source="/Images/logo-green.png"
+                   />
+            <TextBlock Text="GrainChain Test"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="Green"
+                       FontSize="22"
+                       Grid.Column="1"/>
+            <StackPanel Grid.Row="1" Background="Green">
+                <RadioButton Content="Cargar Habitación"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding CargaViewCommand}"/>
+                <RadioButton Content="Mostrar Distribución"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding ResultadoViewCommand}"/>
+                
+            </StackPanel>
+            <ContentControl Grid.Row="1" 
+                            Grid.Column="1"
+                            Margin="10"
+                            Background="Green"
+                            Content="{Binding CurrentView}"/>
+        </Grid>
+    </Border>
+</Window>
