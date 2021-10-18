@@ -3,9 +3,9 @@ Prueba de lógica GrainChain
 
 El proyecto está desarrollado en .Net Framework 4.7.2
 
-Descargar y ejecutar el proyecto.
+Descargar, restaurar las dependencias Nuget, compilar y ejecutar el proyecto.
 
-En la primera opción del menú, cargar la matriz de acuerdo al siguiente ejemplo:
+En la primera opción del menú, cargar la matriz de la habitación en un archivo .txt, de acuerdo al siguiente ejemplo:
 
 10000111
 
